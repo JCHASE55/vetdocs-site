@@ -4,9 +4,11 @@ function App() {
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
       <h1 style={{ textAlign: 'center' }}>VetDocs Intake Form</h1>
-      <form
-        action="https://formspree.io/f/xqabndlv"
-        method="POST"
+      <form action="https://formspree.io/f/xqabndlv" method="POST">
+  <input type="email" name="email" required />
+  <textarea name="message" required></textarea>
+  <button type="submit">Send</button>
+</form>
         encType="multipart/form-data"
       >
         <label>
