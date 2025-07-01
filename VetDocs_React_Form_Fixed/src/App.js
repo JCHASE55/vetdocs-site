@@ -24,6 +24,7 @@ function App() {
             <form
               action="https://formspree.io/f/mnnvwgnz"
               method="POST"
+              encType="multipart/form-data"
             >
               <input
                 type="hidden"
@@ -53,6 +54,15 @@ function App() {
               <label>
                 Message / Special Instructions
                 <textarea name="message" rows="4" />
+              </label>
+
+              <label>
+                Upload Resume (PDF or Word)
+                <input
+                  type="file"
+                  name="file"
+                  accept=".pdf,.doc,.docx"
+                />
               </label>
 
               <button type="submit">Submit Request</button>
