@@ -13,11 +13,6 @@ import BackgroundWrapper from "./BackgroundWrapper"; // New wrapper
 function HomePage() {
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
-      <img
-        src={logo}
-        alt="VetDocs Logo"
-        style={{ maxWidth: "200px", marginBottom: "1rem" }}
-      />
       <h1>Welcome to VetDocs</h1>
       <p>Veteran-Owned Solutions for Every Need</p>
 
