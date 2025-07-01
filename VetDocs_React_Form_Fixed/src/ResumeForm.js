@@ -5,7 +5,12 @@ function ResumeForm() {
     const script = document.createElement("script");
     script.src = "https://www.google.com/recaptcha/api.js";
     script.async = true;
+    script.defer = true;
     document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Clean up on unmount
+    };
   }, []);
 
   return (
@@ -55,10 +60,12 @@ function ResumeForm() {
           />
         </label>
 
-        <div
-          className="g-recaptcha"
-          data-sitekey="6LcwOXQrAAAAADlVAhUetPlQLjRzPILeFecOc0BS"
-        ></div>
+        <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+          <div
+            className="g-recaptcha"
+            data-sitekey="6LcwOXQrAAAAADlVAhUetPlQLjRzPILeFecOc0BS"
+          ></div>
+        </div>
 
         <button type="submit">Submit Request</button>
       </form>
