@@ -7,12 +7,13 @@ import ConcreteForm from "./ConcreteForm";
 import ThankYou from "./ThankYou";
 import Terms from "./Terms";
 import Privacy from "./Privacy";
+import logo from "./VetDocsLogo.png"; // 👈 Import your logo image
 
 function HomePage() {
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       <img
-        src="/vetdocs-logo.png"
+        src={logo} // 👈 Use the imported image here
         alt="VetDocs Logo"
         style={{ maxWidth: "200px", marginBottom: "1rem" }}
       />
