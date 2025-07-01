@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function RealEstateForm() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Real Estate Services Inquiry</h2>
+      <h2>Real Estate Inquiry</h2>
       <form
-        action="https://formspree.io/f/mnnvwgnz"
+        action="https://formspree.io/f/YOUR_RE_FORM_ID"
         method="POST"
         encType="multipart/form-data"
       >
@@ -26,14 +33,21 @@ function RealEstateForm() {
         </label>
 
         <label>
-          What services are you interested in?
+          Inquiry Details
           <textarea name="message" rows="4" />
         </label>
 
         <label>
-          Upload Any Documents (Optional)
-          <input type="file" name="file" accept=".pdf,.doc,.docx" />
+          Upload Supporting Documents (Optional)
+          <input type="file" name="file" accept=".jpg,.jpeg,.png,.pdf" />
         </label>
+
+        <input type="text" name="_gotcha" style={{ display: "none" }} />
+
+        <div
+          className="g-recaptcha"
+          data-sitekey="6LcwOXQrAAAAADlVAhUetPlQLjRzPILeFecOc0BS"
+        ></div>
 
         <button type="submit">Submit Request</button>
       </form>
