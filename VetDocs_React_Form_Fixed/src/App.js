@@ -11,7 +11,8 @@ function App() {
   <h1 style={{ textAlign: 'center' }}>VetDocs Intake Form</h1>
 
 
-      <form action="https://formspree.io/f/mnnvwgnz" method="POST" encType="multipart/form-data">
+      <form action="https://formspree.io/f/mnnvwgnz" method="POST"<input type="hidden" name="_redirect" value="https://www.vetdocs4u.com/thank-you" />
+ encType="multipart/form-data">
 
       >
         <label>
