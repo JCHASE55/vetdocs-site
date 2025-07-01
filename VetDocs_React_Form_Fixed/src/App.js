@@ -7,13 +7,14 @@ import ConcreteForm from "./ConcreteForm";
 import ThankYou from "./ThankYou";
 import Terms from "./Terms";
 import Privacy from "./Privacy";
-import logo from "./VetDocsLogo.png"; // 👈 Import your logo image
+import logo from "./assets/VetDocsLogo.png"; // Moved into /assets
+import BackgroundWrapper from "./BackgroundWrapper"; // New wrapper
 
 function HomePage() {
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       <img
-        src={logo} // 👈 Use the imported image here
+        src={logo}
         alt="VetDocs Logo"
         style={{ maxWidth: "200px", marginBottom: "1rem" }}
       />
@@ -45,16 +46,18 @@ function HomePage() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/resume" element={<ResumeForm />} />
-      <Route path="/junk" element={<JunkForm />} />
-      <Route path="/real-estate" element={<RealEstateForm />} />
-      <Route path="/concrete" element={<ConcreteForm />} />
-      <Route path="/thank-you" element={<ThankYou />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/privacy" element={<Privacy />} />
-    </Routes>
+    <BackgroundWrapper>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/resume" element={<ResumeForm />} />
+        <Route path="/junk" element={<JunkForm />} />
+        <Route path="/real-estate" element={<RealEstateForm />} />
+        <Route path="/concrete" element={<ConcreteForm />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+      </Routes>
+    </BackgroundWrapper>
   );
 }
 
