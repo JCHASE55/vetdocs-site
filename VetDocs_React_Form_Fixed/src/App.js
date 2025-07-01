@@ -1,4 +1,8 @@
-import React from 'react';
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/thank-you" element={<ThankYou />} />
+</Routes>
+
 
 function App() {
   return (
